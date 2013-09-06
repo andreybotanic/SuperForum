@@ -1,0 +1,7 @@
+@import "common.css";
+
+section {
+	box-align: center;
+	width: 30%;
+	margin-left: 35%;
+}

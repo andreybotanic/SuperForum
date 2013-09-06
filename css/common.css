@@ -1,0 +1,146 @@
+* {
+	font-family: Lucida Sans, Arial, Helvetica, sans-serif;
+}
+
+body:before {
+	content: "";
+	position: fixed;
+	top: -5px;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+	-moz-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+	box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+  }
+
+header {
+	text-align: center;
+}
+	
+h2 {
+	font-size: 20px;
+	text-align: center;
+}	
+
+nav ul {
+	text-align: center;
+	display: block;
+	height: 24px;
+}
+
+nav ul li {
+	display: inline;
+	padding: 0px 10px 5px 10px;
+	height: 24px;
+}
+
+label {
+	float: left;
+	padding: 0px 0px 0px 15px;
+	margin-top: 20px;
+}
+
+.top {
+	box-align: center;
+	background-color: #0af;
+	margin-top: -10px;
+	border-width: 0px 1px 1px 1px;
+	border-color: #0af;
+	box-shadow: 0px 0px 13px #08f;
+	border-radius: 0px 0px 30px 30px;
+	width: 50%;
+}
+
+.login {
+	box-align: right;
+	width: 40%;
+}
+
+.frame {
+	box-align: center;
+	margin-top: 25px;
+	border: 1px solid #0af;
+	box-shadow: 0px 0px 13px #08f;
+	border-radius: 30px 0px;
+}
+
+.button{
+	color: #fff;
+	text-shadow: 0px 0px 2px #000;
+	box-shadow: 0px 2px 2px #000;
+	padding: 6px 12px 6px 12px;
+	margin-top: 10px;
+	border-width: 0px;
+	border-radius: 25px;
+	font-weight: bold;
+	text-decoration: none;
+	background: linear-gradient(bottom, #05f, #0df);
+	background: -o-linear-gradient(bottom, #05f, #0df);
+	background: -moz-linear-gradient(bottom, #05f, #0df);
+	background: -ms-linear-gradient(bottom, #05f, #0df);
+	font-size: 16px;
+}
+
+.small-button  {
+	color: #fff;
+	text-shadow: 0px 0px 2px #000;
+	box-shadow: 0px 2px 2px #000;
+	padding: 6px 12px 6px 12px;
+	margin-top: 10px;
+	border-width: 0px;
+	border-radius: 25px;
+	font-weight: bold;
+	text-decoration: none;
+	background: linear-gradient(bottom, #05f, #0df);
+	background: -o-linear-gradient(bottom, #05f, #0df);
+	background: -moz-linear-gradient(bottom, #05f, #0df);
+	background: -ms-linear-gradient(bottom, #05f, #0df);
+	font-size: 13px;
+}
+
+.button:hover {
+	color: #000;
+	text-shadow: 0px 0px 5px #fff, 0px 0px 2px #fff, 0px 0px 1px #fff;
+}
+
+.button:active {
+	background: linear-gradient(top, #05f, #0df);
+	background: -o-linear-gradient(top, #05f, #0df);
+	background: -moz-linear-gradient(top, #05f, #0df);
+	background: -ms-linear-gradient(top, #05f, #0df);
+}
+
+.in {
+	border-width: 0px;
+	border-radius: 5px;
+	padding: 3px 5px 3px 5px;
+	box-shadow: 0px 0px 4px #08f;
+	margin: 15px 15px 0px 10px;
+	font-size: 14pt;
+}
+
+.log {
+	border-width: 0px;
+	border-radius: 5px;
+	padding: 3px 5px 3px 5px;
+	margin: 15px 15px 0px 10px;
+	font-size: 10pt;
+}
+
+.field {
+	clear: both;
+	text-align: right;
+}
+
+.btn {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.copyright {
+	text-align: center;
+	font-size: 12px;
+	color: #888;
+	margin-top: 50px;
+}

@@ -1,0 +1,40 @@
+@import "common.css";
+
+section {
+	box-align: center;
+	width: 35%;
+	margin-left: 32.5%;
+}
+
+.side {
+	position: absolute;
+	left: 36%;
+	top: 275px;
+}
+
+.arrow {
+	position: relative;
+	font-size: 20pt;
+	color: #0af;
+	left: -18px;
+	top: 90px;
+	z-index: 10;
+}
+
+.caption {
+	position: relative;
+	background-color: #0af;
+	width: 200px;
+	height: 150px;
+	color: white;
+	text-align: center;
+	border-radius: 10px;
+	font-family: sans-serif;
+	display: table;
+}
+ 
+.caption p {
+	padding: 5px;
+	display: table-cell;
+	vertical-align: middle;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+			Регистрация
+		</title>
+		<link rel="stylesheet" href="css/registration.css" />
+	</head>
+	<body>
+		<header>
+			<img src="images/head.png">
+		</header>
+		<br>
+		<nav>
+			<ul>
+				<li><a class="button" href="index.html">Главная</a></li>
+				<li><a class="button" href="log-in.html">Вход</a></li>
+				<li><a class="button" href="registration.html">Регистрация</a></li>
+			</ul>
+		</nav>
+		<br>
+		<section>
+		<p align="center">Все поля обязательны для заполнения</p>
+			<form class="frame">
+				<div class="field">
+					<label for="username">Логин</label>
+					<input type="text" class="in" id="login" name="login" required>
+				</div>
+				<div class="field">
+					<label for="email">E-mail</label>
+					<input type="email" class="in" id="email" name="email" required>
+				</div>
+				<div class="field">
+					<label for="password">Пароль</label>
+					<input type="password" class="in" id="password" name="password" required>
+				</div>
+				<div class="field">
+					<label for="repeat_password">Подтверждение пароля</label>
+					<input type="password" class="in" id="repeat_password" name="repeat_password" required>
+				</div>
+				<div class="btn">
+					<input type="submit" class="button" value="Регистрация" id="send">
+				</div>
+			</form>
+		</section>
+		<section class="side">
+			<div class="arrow">
+				◀
+			</div>
+			<div class="caption">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+		</section>
+		<footer>
+			<p class="copyright">Copyright: 2013 Andrey Yanduganov. All rights reserved.</p>
+		</footer>
+	</body>
+</html>
