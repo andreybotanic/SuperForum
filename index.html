@@ -1,57 +1,55 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>
-			Супер Форум
-		</title>
-		<link rel="stylesheet" href="css/index.css" />
-	</head>
-	<body>
-		<section class="top">
-			<form class="login">
-				<div class="field">
-					<label for="name">Логин</label>
-					<input type="text" class="log" id="login" name="login" required>
-				</div>
-				<div class="field">
-					<label for="password">Пароль</label>
-					<input type="password" class="log" id="password" name="password" required>
-				</div>
-				<div>
-					<div class="btn">
-						<input type="submit" class="small-button" value="Войти" id="send">
-					</div>
-				</div>
-			</form>
-		</section>
-		<header>
-			<img src="images/head.png">
-		</header>
-		<br>
-		<nav>
-			<ul>
-				<li><a class="button" href="index.html">Главная</a></li>
-				<li><a class="button" href="log-in.html">Вход</a></li>
-				<li><a class="button" href="registration.html">Регистрация</a></li>
-			</ul>
-		</nav>
-		<br>
-		<section>
-			<header>
-				<h2>Информация о форуме</h2>
-			</header>
-			<article class="frame">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat	cupidatat 
-				non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</article>
-		</section>
-		<footer>
-			<p class="copyright">Copyright: 2013 Andrey Yanduganov. All rights reserved.</p>
-		</footer>
-	</body>
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <meta charset="utf-8" />
+    <title>Супер Форум</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="floatcontainer doc_header" id="header">
+      <div class="toplinks" id="toplinks">
+        <ul class="nouser">
+          <li>
+            <a href="registration.html">Регистрация</a>
+          </li>
+          <li style="list-style: none; display: inline">
+            <form id="navbar_loginform">
+              <fieldset class="logindetails" id="logindetails">
+                <div>
+                  <div>
+                  <input type="text" size="10" id="navbar_username" name="vb_login_username" class="textbox default-value" /> 
+                  <input type="text" size="10" id="navbar_password_hint" name="vb_login_password_hint"
+                  class="textbox default-value" /> 
+                  <input type="submit"
+                  title="Enter your username and password in the boxes provided to login, or click the &#39;Create new account&#39; button to create a profile for yourself."
+                  value="Log in" class="small-button" /></div>
+                </div>
+              </fieldset>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <header>
+      <img src="images/head.png" />
+    </header>
+    <br />
+    <br />
+    <section>
+      <header>
+        <h2>Информация о форуме</h2>
+      </header>
+      <article class="frame">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </article>
+    </section>
+    <footer>
+      <p class="copyright">Copyright: 2013 Andrey Yanduganov. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
