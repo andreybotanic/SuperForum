@@ -42,6 +42,8 @@ nav ul li {
 	height: 24px;
 }
 
+
+
 label {
 	float: left;
 	padding: 0px 0px 0px 15px;
@@ -97,10 +99,11 @@ label {
 	border-radius: 3px;
 	font-weight: bold;
 	text-decoration: none;
-	background: linear-gradient(bottom, #03f, #0df);
-	background: -o-linear-gradient(bottom, #03f, #0df);
-	background: -moz-linear-gradient(bottom, #03f, #0df);
-	background: -ms-linear-gradient(bottom, #03f, #0df);
+	background: linear-gradient(bottom, #05f, #0af);
+	background: -o-linear-gradient(bottom, #05f, #0af);
+	background: -moz-linear-gradient(bottom, #05f, #0af);
+	background: -ms-linear-gradient(bottom, #05f, #0af);
+    background: -webkit-linear-gradient(bottom, #05f, #0af);
 	font-size: 13px;
 }
 
@@ -174,6 +177,7 @@ label {
 	font: normal normal normal 11px Arial, Tahoma, Calibri, Verdana, Geneva, sans-serif;
 	text-align:right;
 	background: none;
+    margin-top: 3px;
 }
 
 .toplinks ul.nouser li {
@@ -201,6 +205,11 @@ label {
 	box-shadow: 0px 0px 7px #08f;
 }
 
+.toplinks ul.nouser li a:hover
+{
+    padding: 10px 10px 0 10px;
+}
+
 .toplinks form {
 	min-width: 220px;
 	display:block;
@@ -224,6 +233,11 @@ label {
 	box-shadow: 0px 0px 7px #08f;
 }
 
+.toplinks .logindetails:hover
+{
+    padding-top: 4px;
+}
+
 .toplinks form input {
 	margin: 3px 0 0;
 	vertical-align: baseline;
@@ -232,12 +246,18 @@ label {
 	border: 0;
 }
 
+
 .doc_header {
 	min-height:45px;
 }
 
 
 ul,fieldset{margin:0;padding:0;}
-fieldset{border:0;}
+fieldset
+{
+    border:0;
+}
+
+
 input{font:99% arial,helvetica,clean,sans-serif;}
 
