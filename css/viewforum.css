@@ -1,0 +1,27 @@
+@import "common.css";
+
+table {
+    text-align: center;
+    margin-top: 10px;
+    width: 80%;
+    margin-left: 10%;
+    border: 1px solid #0af;
+    box-shadow: 0px 0px 10px #0af;
+    border-collapse: collapse;
+    color: #03f;
+}
+
+th {
+    border: 1px double #0af;
+    margin: 0px;
+
+}
+
+td {
+    border: 1px solid #0af;
+    margin: 0px;
+}
+tr {
+    border: 1px solid #0af;
+    margin: 0px;
+}
