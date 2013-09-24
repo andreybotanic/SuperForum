@@ -93,6 +93,7 @@ label {
 
 .small-button  {
 	color: #fff;
+	height: 17px;
 	text-shadow: 0px 0px 2px #000;
 	padding: 6px 12px 6px 12px;
 	margin-top: 10px;
