@@ -1,15 +1,12 @@
 @import "common.css";
 
-
-
 .post
 {
-
     width: 80%;
     margin-left: 10%;
-    margin-bottom: 20px ;
-    min-height: 300px;
-
+    margin-bottom: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #07f;
 }
 
 .postbody
@@ -18,14 +15,12 @@
     border-style: solid;
     border-width: 1px;
     border-color: #0af;
-    box-shadow: 0 0 5px #0af;
+   /* box-shadow: 0 0 5px #0af;*/
     min-height: 130px;
-
 }
 
 .userinfo
 {
-
     height:150px;
     border-radius: 3px;
     border-style: none;
@@ -45,13 +40,10 @@
 {
     margin-left: 120px;
     padding: 10px;
-    border-style: none none none ridge;
+    border-style: none none none solid;
     border-width: 2px;
-    border-color: rgba(82, 106, 248, 0.17);
+    border-color: #0af;
     min-height: 130px;
-   
-
-
 }
 
 .userinfo img
@@ -88,8 +80,7 @@
     background: -moz-linear-gradient(bottom, #05f, #0bf);
     background: -ms-linear-gradient(bottom, #05f, #0bf);
     background: -webkit-linear-gradient(bottom, #05f, #0bf);
-    color: #ffffff;
-
+    color: #fff;
 }
 
 .bgr
@@ -103,7 +94,7 @@
     background: -moz-linear-gradient(bottom, #05f, #00d7ff);
     background: -ms-linear-gradient(bottom, #05f, #00d7ff);
     background: -webkit-linear-gradient(bottom, #05f, #00d7ff);
-    box-shadow: 0 0 5px #0cf;
+   /* box-shadow: 0 0 5px #0cf;*/
     border-radius: 4px 4px 0 0;
 }
 

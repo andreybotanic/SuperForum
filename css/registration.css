@@ -1,33 +1,35 @@
 @import "common.css";
 
-section {
-	box-align: center;
+.form {
+	float: left;
 	width: 35%;
 	margin-left: 32.5%;
 }
 
 .side {
-	position: absolute;
-	left: 36%;
-	top: 275px;
+	margin-left: 67.5%;
+	margin-top: 105px;
+}
+
+.dives {
+	padding-top: 1px;
 }
 
 .arrow {
-	position: relative;
+	margin-top: 0px;
 	font-size: 20pt;
 	color: #0af;
-	left: -18px;
-	top: 90px;
-	z-index: 10;
+	margin-top: 55px;
+	margin-left: -18px;
 }
 
 .caption {
 	position: relative;
+	margin-left: 15px;
 	background-color: #0af;
 	width: 200px;
 	height: 150px;
 	color: white;
-	text-align: center;
 	border-radius: 10px;
 	font-family: sans-serif;
 	display: table;
@@ -35,6 +37,7 @@ section {
  
 .caption p {
 	padding: 5px;
+	text-align: center;
 	display: table-cell;
 	vertical-align: middle;
 }
