@@ -27,13 +27,6 @@ iframe {
 
 
 
-label {
-	float: left;
-	padding: 0px 0px 0px 15px;
-	margin-top: 20px;
-}
-
-
 
 .frame {
 	box-align: center;
@@ -45,7 +38,6 @@ label {
 
 
 
-
 .field {
 	clear: both;
 	text-align: right;
@@ -53,20 +45,4 @@ label {
 
 
 
-
-
-
-.doc_header {
-	min-height:45px;
-}
-
-
-ul,fieldset{margin:0;padding:0;}
-fieldset
-{
-    border:0;
-}
-
-
 input{font:99% arial,helvetica,clean,sans-serif;}
-

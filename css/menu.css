@@ -170,3 +170,14 @@ nav ul li {
     border: 0;
 }
 
+
+.doc_header {
+    min-height:45px;
+}
+
+
+ul,fieldset{margin:0;padding:0;}
+fieldset
+{
+    border:0;
+}
