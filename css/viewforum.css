@@ -21,7 +21,17 @@ td {
     border: 1px solid #0af;
     margin: 0px;
 }
+
 tr {
     border: 1px solid #0af;
     margin: 0px;
+}
+
+
+.create
+{
+    padding: 3px 6px 3px 6px;
+    margin-left: 10%;
+    font-size: 14px;
+    font-weight: bold;
 }

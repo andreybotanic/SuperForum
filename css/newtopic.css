@@ -1,0 +1,21 @@
+@import "common.css";
+@import "topic.css";
+
+
+
+.ptxt
+{
+    height: 50%;
+}
+
+
+.htxt
+{
+    height: 10%;
+}
+
+.postbody
+{
+    min-height: 250px;
+    height: 100px;
+}

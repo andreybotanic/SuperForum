@@ -1,23 +1,6 @@
 @import "common.css";
+@import "topic.css";
 
-.post
-{
-    width: 80%;
-    margin-left: 10%;
-    margin-bottom: 20px;
-	border-radius: 5px;
-	box-shadow: 0 0 5px #07f;
-}
-
-.postbody
-{
-    border-radius: 0 0 5px 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #0af;
-   /* box-shadow: 0 0 5px #0af;*/
-    min-height: 130px;
-}
 
 .userinfo
 {
@@ -69,34 +52,7 @@
     font-weight: bold;
 }
 
-.postheader
-{
-    margin-right: 2px;
-    margin-left: 2px;
-    height: 30px;
-    border-radius: 5px 5px 0 0;
-    background: linear-gradient(bottom, #05f, #0bf);
-    background: -o-linear-gradient(bottom, #05f, #0bf);
-    background: -moz-linear-gradient(bottom, #05f, #0bf);
-    background: -ms-linear-gradient(bottom, #05f, #0bf);
-    background: -webkit-linear-gradient(bottom, #05f, #0bf);
-    color: #fff;
-}
 
-.bgr
-{
-    width: 100%;
-    height: 30px;
-    border-width: 1px;
-    border-color: #0af;
-    background: linear-gradient(bottom, #05f, #00d7ff);
-    background: -o-linear-gradient(bottom, #05f, #00d7ff);
-    background: -moz-linear-gradient(bottom, #05f, #00d7ff);
-    background: -ms-linear-gradient(bottom, #05f, #00d7ff);
-    background: -webkit-linear-gradient(bottom, #05f, #00d7ff);
-   /* box-shadow: 0 0 5px #0cf;*/
-    border-radius: 4px 4px 0 0;
-}
 
 .postheader .postlink
 {
@@ -113,8 +69,18 @@
 
 }
 
-.headertext
+
+.postbody
 {
-  padding-top: 7px;
+    min-height: 150px;
+    height: 100px;
 }
 
+
+.respond
+{
+    padding: 3px 6px 3px 6px;
+    margin-left: 84.2%;
+    font-size: 14px;
+    font-weight: bold;
+}
