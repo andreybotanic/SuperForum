@@ -1,49 +1,48 @@
 @import "common.css";
 
 .frame {
-	float: left;
-	width: 35%;
-	margin-left: 32.5%;
+    float: left;
+    width: 35%;
+    margin-left: 32.5%;
 }
 
 .side {
-	margin-left: 67.6%;
-	margin-top: 127px;
+    margin-left: 67.6%;
+    margin-top: 127px;
 }
 
 .dives {
-	padding-top: 1px;
+    padding-top: 1px;
 }
 
 .arrow {
-	margin-top: 0px;
-	font-size: 20pt;
-	color: #0af;
-	margin-top: 55px;
-	margin-left: -18px;
+    margin-top: 0px;
+    font-size: 20pt;
+    color: #0af;
+    margin-top: 55px;
+    margin-left: -18px;
 }
 
 .caption {
-	position: relative;
-	margin-left: 15px;
-	background-color: #0af;
-	width: 200px;
-	height: 150px;
-	color: white;
-	border-radius: 10px;
-	font-family: sans-serif;
-	display: table;
-}
- 
-.caption p {
-	padding: 5px;
-	text-align: center;
-	display: table-cell;
-	vertical-align: middle;
+    position: relative;
+    margin-left: 15px;
+    background-color: #0af;
+    width: 200px;
+    height: 150px;
+    color: white;
+    border-radius: 10px;
+    font-family: sans-serif;
+    display: table;
 }
 
-.label
-{
+.caption p {
+    padding: 5px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.label {
     float: left;
     padding-left: 25px;
 }
@@ -59,15 +58,13 @@
     float: left;
 }
 
-.passwsign
-{
+.passwsign {
     height: 18px;
     width: 18px;
-    margin: 8px 8px 8px 0 ;
+    margin: 8px 8px 8px 0;
 }
 
-.picturetext
-{
+.picturetext {
     width: 220px;
     float: right;
     height: 35px;
