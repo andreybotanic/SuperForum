@@ -26,7 +26,7 @@
     border-style: none none none solid;
     border-width: 2px;
     border-color: #0af;
-    min-height: 130px;
+    min-height: 100px;
 }
 
 .userinfo img
@@ -59,21 +59,18 @@
     float: right;
     display:inline;
     margin-right: 10px;
-
 }
 
 .postheader .time
 {
     display:inline;
     margin-left: 10px;
-
 }
 
 
 .postbody
 {
     min-height: 150px;
-    height: 100px;
 }
 
 
@@ -83,4 +80,22 @@
     margin-left: 84.2%;
     font-size: 14px;
     font-weight: bold;
+}
+
+
+.postbar
+{
+    height: 33px;
+
+    margin-left: 120px;
+    border-style: none none none solid;
+    border-width: 2px;
+    border-color: #0af;
+
+}
+
+.postbar .respond
+{
+    float: right;
+    margin-right: 10px;
 }
