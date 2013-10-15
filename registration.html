@@ -5,7 +5,8 @@
     <title>
         Регистрация
     </title>
-    <link rel="stylesheet" href="css/registration.css"/>
+    <link rel="stylesheet" href="css/registration.css">
+    <script language="javascript" type="text/javascript" src="js/reg.js"></script>
 </head>
 <body>
 <iframe src="menu.html" seamless scrolling="no" class="menu"></iframe>
@@ -25,29 +26,30 @@
                 <p class="label">E-mail</p>
 
                 <div class="lab picturetext">
-                    <input type="email" class="in" id="email" name="email">
+                    <input type="text" class="in" id="email" name="email" onkeyup=validate()>
+                    <img class="passwsign" id="emailsign">
                 </div>
             </div>
             <div class="field">
                 <p class="label">Пароль</p>
 
                 <div class="lab picturetext">
-                    <input type="password" class="in" id="password" name="password">
-                    <img src="images/ok.png" class="passwsign">
+                    <input type="password" class="in" id="password" name="password" onkeyup=validate()>
+                    <img class="passwsign" id="passwpic">
                 </div>
             </div>
             <div class="field">
                 <p class="label">Подтверждение пароля</p>
 
                 <div class="lab picturetext">
-                    <input type="password" class="in" id="repeat_password" name="repeat_password">
-                    <img src="images/error.png" class="passwsign">
+                    <input type="password" class="in" id="repeat_password" name="repeat_password" onkeyup=validate()>
+                    <img class="passwsign" id="passwcpic">
                 </div>
             </div>
             <input type="submit" class="button bb" value="Регистрация" id="send">
         </form>
     </div>
-    <div class="side">
+    <div class="side" id="baloon">
         <div class="caption">
             <div class="arrow">
                 ◀

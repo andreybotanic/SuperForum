@@ -9,6 +9,7 @@
 .side {
     margin-left: 67.6%;
     margin-top: 127px;
+    visibility: hidden;
 }
 
 .dives {
