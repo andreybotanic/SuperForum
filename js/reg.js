@@ -7,6 +7,7 @@ function validate() {
 function ve() {
     var x = document.getElementById("email").value;
     if (x != "") {
+	document.getElementById("emailsign").style.visibility = "visible";
         var regexp = /.@./
         if (regexp.test(x)) {
             document.getElementById("emailsign").src = "images/ok.png";
@@ -18,12 +19,13 @@ function ve() {
         }
     }
     else
-    document.getElementById("emailsign").src = "";
+    document.getElementById("emailsign").style.visibility = "hidden";
 }
 
 function vp() {
     var x = document.getElementById("password").value;
     if (x != "") {
+	 document.getElementById("passwpic").style.visibility = "visible";
         var regexp = /(?!^[0-9]*$)(?!^[a-zA-Z!@#$%^&*()_+=<>?]*$)^([a-zA-Z!@#$%^&*()_+=<>?0-9]{6,})$/
         if (regexp.test(x)) {
             document.getElementById("passwpic").src = "images/ok.png";
@@ -37,7 +39,7 @@ function vp() {
         }
     }
     else
-    document.getElementById("passwpic").src = "";
+    document.getElementById("passwpic").style.visibility = "hidden";
 }
 
 
@@ -45,6 +47,7 @@ function vpc() {
     var pw = document.getElementById("password").value;
     var pwc = document.getElementById("repeat_password").value;
     if (pwc != "") {
+	document.getElementById("passwcpic").style.visibility = "visible";
         if (pw == pwc && vp()) {
             document.getElementById("passwcpic").src = "images/ok.png";
             return true;
@@ -55,5 +58,7 @@ function vpc() {
             return false;
         }
     }
-    document.getElementById("passwcpic").src = "";
+	else
+
+    document.getElementById("passwcpic").style.visibility = "hidden";
 }

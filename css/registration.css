@@ -63,6 +63,8 @@
     height: 18px;
     width: 18px;
     margin: 8px 8px 8px 0;
+    visibility: hidden;
+
 }
 
 .picturetext {
