@@ -1,23 +1,37 @@
 (function ($) {
     jQuery.fn.validpassw = function () {
+        var tst = function () {
+            if ($("#repeat_password").val() != "" )
+                if ($("#password").val() == $("#repeat_password").val())
+                    $("#repeat_password").css("background-image", "url(images/ok.png)");
+                else
+                    $("#repeat_password").css("background-image", "url(images/error.png)");
+            else
+                $("#repeat_password").css("background-image", "none");
+        }
         var make = function () {
             $(this)
                 .keyup(function () {
                     if ($(this).val() != "") {
-                        $("#passwpic").css("visibility", "visible");
-                        var regexp = /(?!^[0-9]*$)(?!^[a-zA-Z!@#$%^&*()_+=<>?]*$)^([a-zA-Z!@#$%^&*()_+=<>?0-9]{6,})$/
+                        var regexp = /(?!^[0-9]*$)(?!^[a-zA-Z!@#$%^&*()_+=<>?]*$)^([a-zA-Z!@#$%^&*()_+=<>?0-9]{6,})$/;
                         if (regexp.test($(this).val())) {
-                            $("#password").css("background-image", "url(images/ok.png)");
-                            $("#baloon").css("visibility", "hidden");
+                            $(this).css("background-image", "url(images/ok.png)");
+                            $("#baloon-pass").css("visibility", "hidden");
                         } else {
-                            $("#password").css("background-image", "url(images/error.png)");
-                            $("#baloon").css("visibility", "visible");
+                            $(this).css("background-image", "url(images/error.png)");
+                            $("#baloon-pass").css("visibility", "visible");
                         }
+                        tst();
                     }
                     else {
-                        $("#password").css("background-image", "none");
-                        $("#baloon").css("visibility", "hidden");
+                        $(this).css("background-image", "none");
+                        $("#baloon-pass").css("visibility", "hidden");
+                        tst();
                     }
+                })
+            $("#repeat_password")
+                .keyup(function () {
+                    tst();
                 })
         };
         return this.each(make);

@@ -8,8 +8,24 @@
 
 .side {
     margin-left: 67.6%;
-    margin-top: 127px;
+}
+
+.bn {
     visibility: hidden;
+    margin-top: 23px;
+}
+
+.bp {
+    visibility: hidden;
+    margin-top: 5px;
+}
+
+.bparr {
+    margin-top: 38px;
+}
+
+.bnarr {
+    margin-top: 59px;
 }
 
 .dives {
@@ -17,10 +33,8 @@
 }
 
 .arrow {
-    margin-top: 0px;
     font-size: 20pt;
     color: #0af;
-    margin-top: 59px;
     margin-left: -18px;
 }
 
@@ -29,7 +43,7 @@
     margin-left: 15px;
     background-color: #0af;
     width: 200px;
-    height: 150px;
+    height: 120px;
     color: white;
     border-radius: 10px;
     font-family: sans-serif;
