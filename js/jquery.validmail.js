@@ -1,18 +1,25 @@
 (function ($) {
     jQuery.fn.validmail = function () {
+		var tst = function () {
+			if ($("#email").val() != "") {
+                var regexp = /.@./;
+                if (regexp.test($("#email").val()))
+                    $("#email").css("background-image", "url(images/ok.png)");
+                else
+                    $("#email").css("background-image", "url(images/error.png)");
+            }
+            else
+                $("#email").css("background-image", "none");
+		}
         var make = function () {
             $(this)
                 .keyup(function () {
-                    if ($(this).val() != "") {
-                        var regexp = /.@./;
-                        if (regexp.test($(this).val()))
-                            $(this).css("background-image", "url(images/ok.png)");
-                         else
-                            $(this).css("background-image", "url(images/error.png)");
-                    }
-                    else
-                        $(this).css("background-image", "none");
+                    tst();
                 })
+			$(this)
+				.blur(function () {
+					tst();
+				})
         };
         return this.each(make);
     };

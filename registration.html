@@ -9,7 +9,7 @@
     <script language="javascript" type="text/javascript" src="js/jquery-1.10.2.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.validpassw.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.validmail.js"></script>
-    <script language="javascript" type="text/javascript" src="js/jquery.validlogin.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jquery.validnick.js"></script>
 </head>
 <body>
 <iframe src="menu.html" seamless scrolling="no" class="menu"></iframe>
@@ -19,8 +19,8 @@
 
         <form>
             <div class="field">
-                <p class="label">Логин</p>
-                <input type="text" class="lab" id="login" name="login">
+                <p class="label">Ник</p>
+                <input type="text" class="lab" id="nick" name="nick">
             </div>
             <div class="field">
                 <p class="label">E-mail</p>
@@ -56,10 +56,10 @@
     </div>
 </div>
 <script>
-    $("#login").validlogin();
+    $("#nick").validnick();
     $("#email").validmail();
     $("#password").validpassw();
 </script>
-<iframe src="footer.html" seamless></iframe>
+<iframe src="footer.html" seamless scrolling="no"></iframe>
 </body>
 </html>

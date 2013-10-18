@@ -1,5 +1,5 @@
 (function ($) {
-    jQuery.fn.validlogin = function () {
+    jQuery.fn.validnick = function () {
         var make = function () {
             $(this)
                 .keyup(function () {
