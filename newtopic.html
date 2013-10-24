@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8"/>
     <title>Супер Форум</title>
+	<link rel="stylesheet" href="css/themes/base/jquery-ui.css"/>
     <link rel="stylesheet" href="css/newtopic.css"/>
+	<script language="javascript" type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/ui/jquery-ui.js"></script>
 </head>
 <body>
 <iframe src="menu.html" seamless scrolling="no" class="menu"></iframe>
@@ -16,13 +19,24 @@
         </div>
     </div>
     <div class="postbody">
-
-        <input type="text" class="lab htxt" placeholder="Название темы">
+	<div class="ui-widget">
+        <input type="text" class="lab htxt" placeholder="Название темы" id="name">
+	</div>
         <textarea type="text" class="lab ptxt" placeholder="Текст сообщения"></textarea>
         <input type="submit" value="Создать" class="button bb">
 
     </div>
 </div>
+<script>
+	$(function() {
+    var Tags = [
+	"почему я не банан",
+	"кто такой ктулху",
+	"сколько будет дважды три"
+	];
+	$("#name").autocomplete({source: Tags});
+	});
+</script>
 <iframe src="footer.html" seamless scrolling="no"> </iframe>
 </body>
 </html>

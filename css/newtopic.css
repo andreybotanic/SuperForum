@@ -1,13 +1,11 @@
 @import "common.css";
 @import "topic.css";
 
-
-
 .ptxt
 {
     height: 50%;
+	font-size: 14px;
 }
-
 
 .htxt
 {
@@ -16,6 +14,5 @@
 
 .postbody
 {
-    min-height: 250px;
-    height: 100px;
+    height: 250px;
 }

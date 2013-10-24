@@ -6,7 +6,7 @@
         Регистрация
     </title>
     <link rel="stylesheet" href="css/registration.css">
-    <script language="javascript" type="text/javascript" src="js/jquery-1.10.2.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.validpassw.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.validmail.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.validnick.js"></script>
@@ -56,9 +56,10 @@
     </div>
 </div>
 <script>
+	$(document).ready(function() {
     $("#nick").validnick();
     $("#email").validmail();
-    $("#password").validpassw();
+    $("#password").validpassw();});
 </script>
 <iframe src="footer.html" seamless scrolling="no"></iframe>
 </body>
