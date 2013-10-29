@@ -2,20 +2,16 @@
 @import "topic.css";
 
 
-.ptxt
+.nptxt
 {
+
     height: 60%;
 }
 
 
-.postbody
+.npostbody
 {
     min-height: 250px;
     height: 100px;
 }
 
-.re
-{
-    margin-left: 5px;
-    display:inline;
-}

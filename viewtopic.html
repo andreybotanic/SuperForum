@@ -4,6 +4,9 @@
     <meta charset="utf-8"/>
     <title>Супер Форум</title>
     <link rel="stylesheet" href="css/viewtopic.css"/>
+    <link rel="stylesheet" href="css/newpost.css"/>
+    <script language="javascript" type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jquery.send.js"></script>
 </head>
 <body>
 <iframe src="menu.html" seamless scrolling="no" class="menu"></iframe>
@@ -44,7 +47,7 @@
             along which objects can easily be cut.
         </div>
         <div class="postbar">
-            <a href="newpost.html" class=" button respond">Ответить</a>
+            <a  class=" button respond">Ответить</a>
         </div>
     </div>
 </div>
@@ -125,11 +128,22 @@
             impetus
         </div>
         <div class="postbar">
-            <a href="newpost.html" class=" button respond">Ответить</a>
+            <a   class=" button respond">Ответить</a>
         </div>
     </div>
 </div>
-<a href="newpost.html" class=" button respond">Ответить</a>
+
+<a   id ="sendbtn" class=" button respond">Ответить</a>
+
+<div id = "last">
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#sendbtn").send();
+       });
+</script>
 <iframe src="footer.html" seamless scrolling="no"></iframe>
 </body>
 </html>
