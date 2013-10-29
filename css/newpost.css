@@ -11,7 +11,11 @@
 
 .npostbody
 {
-    min-height: 250px;
-    height: 100px;
+    height: 250px;
 }
 
+
+form
+{
+    height: 100%;
+}

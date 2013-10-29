@@ -26,7 +26,8 @@
     border-style: none none none solid;
     border-width: 2px;
     border-color: #0af;
-    min-height: 100px;
+    min-height: 110px;
+    word-wrap: break-word;
 }
 
 .userinfo img
@@ -41,7 +42,9 @@
 
 .image-info
 {
-    padding-top: 10px;
+    padding: 5px;
+    word-wrap: break-word;
+    font-size: 12px;
 }
 
 .link
@@ -70,7 +73,7 @@
 
 .postbody
 {
-    min-height: 150px;
+
 }
 
 
@@ -98,4 +101,33 @@
 {
     float: right;
     margin-right: 10px;
+}
+
+li
+{
+display: inline;
+    text-align: center;
+}
+
+ul
+{
+    margin-right:  10%;
+    float: right;
+}
+
+.q
+{
+    clear: both;
+}
+
+.pagelink
+{
+    border: solid 1px black;
+    display: inline-block;
+    width: 13px;
+}
+
+a
+{
+    text-decoration: none;
 }

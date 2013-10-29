@@ -12,8 +12,10 @@
                             </div> \
                             </div> \
                         <div class=\"postbody npostbody\"> \
-                            <textarea type=\"text\" class=\"lab ptxt nptxt\" placeholder=\"Текст сообщения\"></textarea> \
+                        <form action=\"send.php\" method = \"post\">\
+                            <textarea type=\"text\" name = \"msg\" class=\"lab ptxt nptxt\" placeholder=\"Текст сообщения\"></textarea> \
                             <input type=\"submit\" value=\"Отправить\" class=\"button bb\">\
+                        </form>\
                             </div>\
                         </div>"
                     );
