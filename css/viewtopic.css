@@ -89,7 +89,6 @@
 .postbar
 {
     height: 33px;
-
     margin-left: 120px;
     border-style: none none none solid;
     border-width: 2px;
@@ -105,14 +104,18 @@
 
 li
 {
-display: inline;
+display: inline-block;
     text-align: center;
+
+
 }
 
 ul
 {
-    margin-right:  10%;
+
     float: right;
+    margin: 0px 10% 10px 0px;
+
 }
 
 .q
@@ -122,9 +125,20 @@ ul
 
 .pagelink
 {
-    border: solid 1px black;
     display: inline-block;
-    width: 13px;
+    min-width: 20px;
+    background: linear-gradient(bottom, rgba(0, 85, 255, 0.52), rgba(0, 187, 255, 0.33));
+    background: -o-linear-gradient(bottom, rgba(0, 85, 255, 0.52), rgba(0, 187, 255, 0.33));
+    background: -moz-linear-gradient(bottom, rgba(0, 85, 255, 0.52), rgba(0, 187, 255, 0.33));
+    background: -ms-linear-gradient(bottom, rgba(0, 85, 255, 0.52), rgba(0, 187, 255, 0.33));
+    background: -webkit-linear-gradient(bottom, rgba(0, 85, 255, 0.52), rgba(0, 187, 255, 0.33));
+    border-radius: 2px;
+    padding: 1px;
+}
+
+.curpage
+{
+   background: none;
 }
 
 a

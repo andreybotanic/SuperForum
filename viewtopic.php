@@ -10,25 +10,9 @@
 </head>
 <body>
 <iframe src="menu.html" seamless scrolling="no" class="menu"></iframe>
+<br><br>
 
-<nav>
-    <ul>
-        <li>
-            <div class="pagelink">
-                <a href="/viewtopic.php?page=1">1</a>
-            </div>
-        </li>
-        <li>
-            <div class="pagelink">
-                <a href="/viewtopic.php?page=2">2</a>
-            </div>
-        </li>
-    </ul>
-</nav>
-<br>
-<br>
 
-<div class="q"> </div>
 
 <?php
 $hostname = "localhost";
@@ -36,17 +20,60 @@ $username = "db";
 $password = "db";
 $dbName = "forum";
 $dt = date('Y-m-d H:i:s');
+$numposts = 3;
 
-$msgstable = "message";
+$msgtable = "message";
 $usrtable = "users";
-$first = $_GET['page']-1;
+$page = isset($_GET['page']) ? $_GET['page'] : 1 ;
 
-mysql_connect($hostname,$username,$password) OR DIE("Не могу создать соединение ");
+mysql_connect($hostname,$username,$password) OR DIE("unable to connect to database ");
 mysql_select_db($dbName) or die(mysql_error());
-$query = "SELECT * FROM $msgstable LIMIT $first,2";
 
-$posts = mysql_query($query) or die(mysql_error());
+
+$result = mysql_query("select count(1) FROM $msgtable ");
+$row = mysql_fetch_array($result);
+$total = $row[0];
+if ($page > $total/$numposts) $page = $total/$numposts;
+$first = ($page -1 )*$numposts;
 $num = $first;
+
+$query = "SELECT * FROM $msgtable LIMIT $first,$numposts";
+$posts = mysql_query($query) or die(mysql_error());
+
+
+
+echo "<nav><ul>";
+echo " <li>
+            <div class=\"pagelink\">
+                <a href=\"/viewtopic.php?page=1\"><<</a>
+            </div>
+        </li>";
+for ($n = $page - 3; $n <= $page + 3 ; $n++)
+{
+    if (($n * $numposts <= $total+$numposts-1 )  && $n > 0)
+    {
+        if ($n == $page)
+         echo " <li>
+            <div class=\"pagelink curpage\">
+                <a href=\"/viewtopic.php?page=".$n."\">".$n."</a>
+            </div>
+        </li>";
+        else
+            echo " <li>
+            <div class=\"pagelink\">
+                <a href=\"/viewtopic.php?page=".$n."\">".$n."</a>
+            </div>
+                 </li>";
+    }
+}
+echo " <li>
+            <div class=\"pagelink\">
+                <a href=\"/viewtopic.php?page=".$total/$numposts."\">>></a>
+            </div>
+        </li>";
+echo "</ul></nav><br><div class=\"q\"></div>";
+
+
 
   while ($row=mysql_fetch_array($posts)) {
   $id =$row['id'];
@@ -89,6 +116,36 @@ $num = $first;
   }
 
 
+echo "<nav><ul>";
+echo " <li>
+            <div class=\"pagelink\">
+                <a href=\"/viewtopic.php?page=1\"><<</a>
+            </div>
+        </li>";
+for ($n = $page - 3; $n <= $page + 3 ; $n++)
+{
+    if (($n * $numposts <= $total+$numposts-1 )  && $n > 0)
+    {
+        if ($n == $page)
+            echo " <li>
+            <div class=\"pagelink curpage\">
+                <a href=\"/viewtopic.php?page=".$n."\">".$n."</a>
+            </div>
+        </li>";
+        else
+            echo " <li>
+            <div class=\"pagelink\">
+                <a href=\"/viewtopic.php?page=".$n."\">".$n."</a>
+            </div>
+                 </li>";
+    }
+}
+echo " <li>
+            <div class=\"pagelink\">
+                <a href=\"/viewtopic.php?page=".$total/$numposts."\">>></a>
+            </div>
+        </li>";
+echo "</ul></nav><br><br><div class=\"q\"></div>";
 
 mysql_close();
 ?>

@@ -17,8 +17,8 @@ $query = "INSERT INTO $userstable VALUES('$id','$dt','$msg')";
 mysql_query($query) or die(mysql_error());
 
 
-echo '<meta http-equiv="refresh" content="0;URL=/viewtopic.php">';
-echo "press here to <a href='/viewtopic.php'>return</a> ";
+echo '<meta http-equiv="refresh" content="0;URL=/viewtopic.php?page=1">';
+echo "press here to <a href='/viewtopic.php?page=1'>return</a> ";
 mysql_close();
 ?>
 
