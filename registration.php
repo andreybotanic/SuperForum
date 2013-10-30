@@ -16,8 +16,7 @@
 <div class="dives">
     <div class="frame">
         <p align="center">Все поля обязательны для заполнения</p>
-
-        <form>
+        <form action="registr.php" method="post">
             <div class="field">
                 <p class="label">Ник</p>
                 <input type="text" class="lab" id="nick" name="nick">
@@ -37,7 +36,6 @@
             <input type="submit" class="button bb" value="Регистрация" id="send">
         </form>
     </div>
-
     <div class="side bn" id="baloon-nick">
         <div class="caption">
             <div class="arrow bnarr">
