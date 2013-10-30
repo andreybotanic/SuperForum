@@ -15,6 +15,7 @@
 
 
 <?php
+
 $hostname = "localhost";
 $username = "db";
 $password = "db";
@@ -25,15 +26,23 @@ $numposts = 3;
 $msgtable = "message";
 $usrtable = "users";
 $page = isset($_GET['page']) ? $_GET['page'] : 1 ;
-
+if (isset($_POST['inputname']))
+{
+    $dest = intval($_POST['inputname']);
+    echo '<meta http-equiv="refresh" content="0;URL=/viewtopic.php?page='.$dest.'">';
+}
 mysql_connect($hostname,$username,$password) OR DIE("unable to connect to database ");
 mysql_select_db($dbName) or die(mysql_error());
-
 
 $result = mysql_query("select count(1) FROM $msgtable ");
 $row = mysql_fetch_array($result);
 $total = $row[0];
-if ($page > $total/$numposts) $page = $total/$numposts;
+$totalpages = ceil($total/$numposts);
+if ($page > $totalpages)
+{
+    $page = $totalpages;
+    echo '<meta http-equiv="refresh" content="0;URL=/viewtopic.php?page='.$page.'">';
+}
 $first = ($page -1 )*$numposts;
 $num = $first;
 
@@ -43,6 +52,10 @@ $posts = mysql_query($query) or die(mysql_error());
 
 
 echo "<nav><ul>";
+echo "<li><form  method=\"post\" name=\"formname\">
+    <input  class = 'pagelink in' name=\"inputname\" type=\"text\" />
+</form></li>";
+
 echo " <li>
             <div class=\"pagelink\">
                 <a href=\"/viewtopic.php?page=1\"><<</a>
@@ -68,7 +81,7 @@ for ($n = $page - 3; $n <= $page + 3 ; $n++)
 }
 echo " <li>
             <div class=\"pagelink\">
-                <a href=\"/viewtopic.php?page=".$total/$numposts."\">>></a>
+                <a href=\"/viewtopic.php?page=".$totalpages."\">>></a>
             </div>
         </li>";
 echo "</ul></nav><br><div class=\"q\"></div>";
@@ -117,6 +130,9 @@ echo "</ul></nav><br><div class=\"q\"></div>";
 
 
 echo "<nav><ul>";
+echo "<li><form  method=\"post\" name=\"formname\">
+    <input  class = 'pagelink in' name=\"inputname\" type=\"text\" />
+</form></li>";
 echo " <li>
             <div class=\"pagelink\">
                 <a href=\"/viewtopic.php?page=1\"><<</a>
@@ -142,7 +158,7 @@ for ($n = $page - 3; $n <= $page + 3 ; $n++)
 }
 echo " <li>
             <div class=\"pagelink\">
-                <a href=\"/viewtopic.php?page=".$total/$numposts."\">>></a>
+                <a href=\"/viewtopic.php?page=".$totalpages."\">>></a>
             </div>
         </li>";
 echo "</ul></nav><br><br><div class=\"q\"></div>";
