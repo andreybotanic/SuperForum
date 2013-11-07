@@ -27,11 +27,63 @@ tr {
     margin: 0px;
 }
 
-
 .create
 {
     padding: 3px 6px 3px 6px;
     margin-left: 10%;
     font-size: 14px;
     font-weight: bold;
+}
+
+.userpic
+{
+	float: left;
+	height: 50px;
+    border-style: none;
+	margin: 5px 10px 5px 20px;
+}
+
+.userpic img
+{
+	width: 44px;
+    border: solid 1px cornflowerblue;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+.box
+{
+	margin-top: 5px;
+}
+
+.name
+{
+	text-decoration: none;
+	font-size: 14pt;
+	text-shadow: 0px 0px 2px #0af;
+}
+
+.info
+{
+	margin-top: 5px;
+	color: gray;
+	font-size: 10pt;
+}
+
+.info a
+{
+	text-decoration: none;
+	color: gray;
+}
+
+.num
+{
+	color: black;
+}
+
+.text
+{
+	color: black;
+	font-size: 12pt;
+	margin: 5px;
 }

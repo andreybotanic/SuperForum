@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,46 +12,51 @@
     <script language="javascript" type="text/javascript" src="js/jquery.send.js"></script>
 </head>
 <body>
-<iframe src="menu.html" seamless scrolling="no" class="menu"></iframe>
+<?php
+include 'menu.php';
+?>
 <br><br>
 
 
 
 <?php
-
 $hostname = "localhost";
 $username = "db";
 $password = "db";
 $dbName = "forum";
 $dt = date('Y-m-d H:i:s');
-$numposts = 3;
+if (isset($_SESSION['numposts']))
+    $numposts = $_SESSION['numposts'];
+else $numposts = 3;
 
-$msgtable = "message";
+$msgtable = "messages";
 $usrtable = "users";
-$page = isset($_GET['page']) ? $_GET['page'] : 1 ;
-if (isset($_POST['inputname']))
-{
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
+$topic = isset($_GET['topic']) ? $_GET['topic'] : 1;
+if (isset($_POST['inputname'])) {
     $dest = intval($_POST['inputname']);
-    echo '<meta http-equiv="refresh" content="0;URL=/viewtopic.php?page='.$dest.'">';
+    echo '<meta http-equiv="refresh" content="0;URL=/viewtopic.php?page=' . $dest . '&topic=' . $topic . '">';
 }
-mysql_connect($hostname,$username,$password) OR DIE("unable to connect to database ");
+mysql_connect($hostname, $username, $password) OR DIE("unable to connect to database ");
 mysql_select_db($dbName) or die(mysql_error());
 
-$result = mysql_query("select count(1) FROM $msgtable ");
+$result = mysql_query("select count(1) FROM $msgtable WHERE topic_id = $topic");
 $row = mysql_fetch_array($result);
 $total = $row[0];
-$totalpages = ceil($total/$numposts);
-if ($page > $totalpages)
-{
+
+$totalpages = ceil($total / $numposts);
+if ($page > $totalpages) {
     $page = $totalpages;
-    echo '<meta http-equiv="refresh" content="0;URL=/viewtopic.php?page='.$page.'">';
+    echo '<meta http-equiv="refresh" content="0;URL=/viewtopic.php?page=' . $page . '&topic=' . $topic . '">';
 }
-$first = ($page -1 )*$numposts;
-$num = $first;
+if ($page < 1) {
+    $page = 1;
+    echo '<meta http-equiv="refresh" content="0;URL=/viewtopic.php?page=' . $page . '&topic=' . $topic . '">';
+}
+$first = ($page - 1) * $numposts;
 
-$query = "SELECT * FROM $msgtable LIMIT $first,$numposts";
+$query = "SELECT * FROM $msgtable  WHERE topic_id = $topic LIMIT $first,$numposts";
 $posts = mysql_query($query) or die(mysql_error());
-
 
 
 echo "<nav><ul>";
@@ -58,126 +66,124 @@ echo "<li><form  method=\"post\" name=\"formname\">
 
 echo " <li>
             <div class=\"pagelink\">
-                <a href=\"/viewtopic.php?page=1\"><<</a>
+                <a href=\"/viewtopic.php?page=1&topic=" . $topic . "\"><<</a>
             </div>
         </li>";
-for ($n = $page - 3; $n <= $page + 3 ; $n++)
-{
-    if (($n * $numposts <= $total+$numposts-1 )  && $n > 0)
-    {
+for ($n = $page - 3; $n <= $page + 3; $n++) {
+    if (($n * $numposts <= $total + $numposts - 1) && $n > 0) {
         if ($n == $page)
-         echo " <li>
+            echo " <li>
             <div class=\"pagelink curpage\">
-                <a href=\"/viewtopic.php?page=".$n."\">".$n."</a>
+                <a href=\"/viewtopic.php?page=" . $n . '&topic=' . $topic . "\">" . $n . "</a>
             </div>
         </li>";
         else
             echo " <li>
             <div class=\"pagelink\">
-                <a href=\"/viewtopic.php?page=".$n."\">".$n."</a>
+                <a href=\"/viewtopic.php?page=" . $n . '&topic=' . $topic . "\">" . $n . "</a>
             </div>
                  </li>";
     }
 }
 echo " <li>
             <div class=\"pagelink\">
-                <a href=\"/viewtopic.php?page=".$totalpages."\">>></a>
+                <a href=\"/viewtopic.php?page=" . $totalpages . '&topic=' . $topic . "\">>></a>
             </div>
         </li>";
 echo "</ul></nav><br><div class=\"q\"></div>";
 
 
+while ($row = mysql_fetch_array($posts)) {
+    $id = $row['creator'];
+    $num = $row['message_id'];
+    $usrqw = "SELECT * FROM $usrtable WHERE id=$id";
+    $usr = mysql_fetch_array(mysql_query($usrqw)) or die(mysql_error());
 
-  while ($row=mysql_fetch_array($posts)) {
-  $id =$row['id'];
-  $usrqw = "SELECT * FROM $usrtable WHERE id=$id" ;
-  $usr = mysql_fetch_array(mysql_query($usrqw)) or die(mysql_error());
+    //  if (isset($_SESSION['autorised'])) $btn =  '<a  class="button respond">Ответить</a>' ; else $btn = '';
+    $btn = '';
     echo "<div class=\"post\">
     <div class=\"bgr\">
         <div class=\"postheader\">
             <div class=\"headertext\">
                 <div class=\"time\">"
-                    .$row['date'].
-               "</div>
-                <div class=\"postlink\">"
-                         ."#".($num+1).
-                "</div>
-            </div>
-        </div>
-    </div>
-    <div class=\"postbody\">
-        <div class=\"userbox\">
-            <div class=\"userinfo\">
-                <a href=\"\" class=\"link\">
-                    <img src=\"images/".$usr['avatar']."\">
-                    <div class=\"image-info\">"
-                            .$usr['nick'].
-                   "</div>
-                </a>
-            </div>
-        </div>
-        <div class=\"message\">"
-           .$row['text'].
+        . $row['creationdate'] .
         "</div>
-        <div class=\"postbar\">
-            <a  class=\" button respond\">Ответить</a>
-        </div>
+         <div class=\"postlink\">"
+        . "#" . $num .
+        "</div>
+    </div>
+</div>
+</div>
+<div class=\"postbody\">
+<div class=\"userbox\">
+    <div class=\"userinfo\">
+        <a href=\"\" class=\"link\">
+            <img src=\"images/" . $usr['avatar'] . "\">
+                    <div class=\"image-info\">"
+        . $usr['nick'] .
+        "</div>
+     </a>
+ </div>
+</div>
+<div class=\"message\">"
+        . $row['text'] .
+        "</div>
+        <div class=\"postbar\">" . $btn . "</div>
     </div>
 </div>
 ";
- $num += 1;
-  }
+}
 
 
 echo "<nav><ul>";
 echo "<li><form  method=\"post\" name=\"formname\">
     <input  class = 'pagelink in' name=\"inputname\" type=\"text\" />
 </form></li>";
+
 echo " <li>
             <div class=\"pagelink\">
-                <a href=\"/viewtopic.php?page=1\"><<</a>
+                <a href=\"/viewtopic.php?page=1&topic=" . $topic . "\"><<</a>
             </div>
         </li>";
-for ($n = $page - 3; $n <= $page + 3 ; $n++)
-{
-    if (($n * $numposts <= $total+$numposts-1 )  && $n > 0)
-    {
+for ($n = $page - 3; $n <= $page + 3; $n++) {
+    if (($n * $numposts <= $total + $numposts - 1) && $n > 0) {
         if ($n == $page)
             echo " <li>
             <div class=\"pagelink curpage\">
-                <a href=\"/viewtopic.php?page=".$n."\">".$n."</a>
+                <a href=\"/viewtopic.php?page=" . $n . '&topic=' . $topic . "\">" . $n . "</a>
             </div>
         </li>";
         else
             echo " <li>
             <div class=\"pagelink\">
-                <a href=\"/viewtopic.php?page=".$n."\">".$n."</a>
+                <a href=\"/viewtopic.php?page=" . $n . '&topic=' . $topic . "\">" . $n . "</a>
             </div>
                  </li>";
     }
 }
 echo " <li>
             <div class=\"pagelink\">
-                <a href=\"/viewtopic.php?page=".$totalpages."\">>></a>
+                <a href=\"/viewtopic.php?page=" . $totalpages . '&topic=' . $topic . "\">>></a>
             </div>
         </li>";
-echo "</ul></nav><br><br><div class=\"q\"></div>";
+echo "</ul></nav><br><div class=\"q\"></div>";
 
+
+if (isset($_SESSION['autorised']))
+    echo '<a  id ="sendbtn" class=" button respond">Ответить</a>';
 mysql_close();
-?>
 
+echo
+'<div id = "last">
 
-<a  id ="sendbtn" class=" button respond">Ответить</a>
+</div>';
 
-<div id = "last">
-
-</div>
-
-<script>
+echo '<script>
     $(document).ready(function() {
-        $("#sendbtn").send();
+        $("#sendbtn").send(' . $topic . ');
        });
-</script>
+</script>';
+?>
 <iframe src="footer.html" seamless scrolling="no"></iframe>
 </body>
 </html>

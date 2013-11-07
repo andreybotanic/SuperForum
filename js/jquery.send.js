@@ -1,5 +1,5 @@
 (function ($) {
-    jQuery.fn.send = function () {
+    jQuery.fn.send = function (a) {
         var make = function () {
             $(this)
                 .click(function () {
@@ -14,6 +14,7 @@
                         <div class=\"postbody npostbody\"> \
                         <form action=\"send.php\" method = \"post\">\
                             <textarea type=\"text\" name = \"msg\" class=\"lab ptxt nptxt\" placeholder=\"Текст сообщения\"></textarea> \
+                            <input type = hidden name = \"topic\" value = "+a+">\
                             <input type=\"submit\" value=\"Отправить\" class=\"button bb\">\
                         </form>\
                             </div>\

@@ -14,13 +14,13 @@ body:before {
 }
 
 
-nav ul {
+nav .nouser {
     text-align: center;
     display: block;
     height: 24px;
 }
 
-nav ul li {
+nav .nouser li {
     display: inline;
     padding: 0px 10px 5px 10px;
     height: 24px;
@@ -101,7 +101,6 @@ nav ul li {
     font: normal normal normal 11px Arial, Tahoma, Calibri, Verdana, Geneva, sans-serif;
     text-align:right;
     background: none;
-    margin-top: 3px;
 }
 
 .toplinks ul.nouser li {
@@ -135,7 +134,7 @@ nav ul li {
 }
 
 .toplinks form {
-    min-width: 220px;
+    min-width: 60px;
     display:block;
     margin-right: 10px;
     text-align: left;
@@ -176,7 +175,7 @@ nav ul li {
 }
 
 
-ul,fieldset{margin:0;padding:0;}
+.nouser,fieldset{margin:0;padding:0;}
 fieldset
 {
     border:0;
