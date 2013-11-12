@@ -21,3 +21,24 @@ form
 {
     height: 100%;
 }
+
+
+.infotext
+{
+    display: inline-block;
+}
+
+
+.notloginfo
+{
+   text-align: center;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+
+
+.notlogpost
+{
+    height: 50px;
+}

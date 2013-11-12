@@ -13,11 +13,11 @@ session_start();
     <script language="javascript" type="text/javascript" src="js/jquery.validpassw.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.validmail.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.validnick.js"></script>
+    <?php
+    include 'menu.php';
+    ?>
 </head>
 <body>
-<?php
-include 'menu.php';
-?>
 <div class="dives">
     <div class="frame">
         <p align="center">Все поля обязательны для заполнения</p>
@@ -64,6 +64,8 @@ include 'menu.php';
     $("#email").validmail();
     $("#password").validpassw();});
 </script>
-<iframe src="footer.html" seamless scrolling="no"></iframe>
+<?php
+include 'footer.php';
+?>
 </body>
 </html>

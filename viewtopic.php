@@ -10,11 +10,11 @@ session_start();
     <link rel="stylesheet" href="css/newpost.css"/>
     <script language="javascript" type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.send.js"></script>
+    <?php
+    include 'menu.php';
+    ?>
 </head>
 <body>
-<?php
-include 'menu.php';
-?>
 <br><br>
 
 
@@ -183,7 +183,8 @@ echo '<script>
         $("#sendbtn").send(' . $topic . ');
        });
 </script>';
+
+include 'footer.php';
 ?>
-<iframe src="footer.html" seamless scrolling="no"></iframe>
 </body>
 </html>

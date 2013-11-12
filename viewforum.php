@@ -7,11 +7,11 @@ session_start();
     <meta charset="utf-8"/>
     <title>Супер Форум</title>
     <link rel="stylesheet" href="css/viewforum.css"/>
+    <?php
+    include 'menu.php';
+    ?>
 </head>
 <body>
-<?php
-include 'menu.php';
-?>
 <br>
 <br>
 <br>
@@ -110,6 +110,8 @@ include 'menu.php';
     }
     ?>
 </table>
-<iframe src="footer.html" seamless scrolling="no"></iframe>
+<?php
+include 'footer.php';
+?>
 </body>
 </html>
