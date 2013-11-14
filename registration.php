@@ -13,6 +13,7 @@ session_start();
     <script language="javascript" type="text/javascript" src="js/jquery.validpassw.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.validmail.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.validnick.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jquery.validall.js"></script>
     <?php
     include 'menu.php';
     ?>
@@ -38,7 +39,7 @@ session_start();
                 <p class="label">Подтверждение пароля</p>
                 <input type="password" class="lab" id="repeat_password" name="repeat_password">
             </div>
-            <input type="submit" class="button bb" value="Регистрация" id="send">
+            <input type="button" class="button bb" value="Регистрация" id="send">
         </form>
     </div>
     <div class="side bn" id="baloon-nick">
@@ -60,9 +61,8 @@ session_start();
 </div>
 <script>
 	$(document).ready(function() {
-    $("#nick").validnick();
-    $("#email").validmail();
-    $("#password").validpassw();});
+    $(this).validall();
+    });
 </script>
 <?php
 include 'footer.php';

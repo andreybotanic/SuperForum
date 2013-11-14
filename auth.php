@@ -25,10 +25,11 @@ if (!isset($_SESSION['autorised']))
             echo '<meta http-equiv="refresh" content="0;URL='.$_SERVER['HTTP_REFERER'].'">';
             $_SESSION['autorised'] = 1;
             $_SESSION['numposts'] = 3;
+            unset($_SESSION['incorr']);
             exit;
         } else {
-            echo "username or password is incorrect<br>";
-            echo 'press here to <a href="'.$_SERVER['HTTP_REFERER'].'">retun</a>';
+            $_SESSION['incorr'] = 1;
+            echo '<meta http-equiv="refresh" content="0;URL=/login.php">';
             exit;
         }
 
