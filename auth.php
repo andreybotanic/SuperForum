@@ -17,13 +17,15 @@ if (!isset($_SESSION['autorised']))
         $res = mysql_query($query) or trigger_error(mysql_error() . $query);
         if ($row = mysql_fetch_assoc($res)) {
             $_SESSION['user_id'] = $row['id'];
-            $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
             $_SESSION['user_nick'] = $row['nick'];
+            $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
+            $_SESSION['autorised'] = 1;
+            unset($_SESSION['incorr']);
             $id = $_SESSION['user_id'];
             $usrqw = "SELECT * FROM $usrtable WHERE id=$id";
             $usr = mysql_fetch_array(mysql_query($usrqw)) or die(mysql_error());
             echo '<meta http-equiv="refresh" content="0;URL='.$_SERVER['HTTP_REFERER'].'">';
-            $_SESSION['autorised'] = 1;
+
             $_SESSION['numposts'] = 3;
             unset($_SESSION['incorr']);
             exit;

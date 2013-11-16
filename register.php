@@ -1,4 +1,5 @@
 <?php
+session_start();
 $hostname = "localhost";
 $username = "db";
 $password = "db";
@@ -24,8 +25,14 @@ if (strlen($nick) <= 25)
                 $users_num++;
                 $query = "INSERT INTO $userstable VALUES('$users_num','$nick','$pass', '$email', '$date', '$avatar')";
                 mysql_query($query) or die(mysql_error());
-                echo '<meta http-equiv="refresh" content="0;URL=/">';
                 $ok = true;
+                $_SESSION['user_id'] = $users_num;
+                $_SESSION['user_nick'] = $nick;
+                $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
+                $_SESSION['autorised'] = 1;
+                $_SESSION['numposts'] = 3;
+                unset($_SESSION['incorr']);
+                echo '<meta http-equiv="refresh" content="0;URL=/">';
             }
 if (!isset($ok)) {
     echo "you have submitted incorrect data<br>";
