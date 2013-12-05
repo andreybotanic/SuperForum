@@ -10,9 +10,9 @@ session_start();
     <link rel="stylesheet" href="css/newtopic.css"/>
     <script language="javascript" type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script src="js/ui/jquery-ui.js"></script>
-<?php
-include 'menu.php';
-?>
+    <?php
+    include 'menu.php';
+    ?>
 </head>
 <body>
 <?php
@@ -37,40 +37,43 @@ if (isset($_SESSION['autorised'])) {
         </form>
     </div>
 </div> ';
+echo "<script>
+    jQuery(document).ready(function () {
+        $(\"#name\")
+    .keyup(function () {
+        $.ajax({
+                    url: \"getposts.php?title=\"+encodeURI($(\"#name\").val()),
+                    caching : false,
+                    dataType: \"xml\",
+                    success: function (xmlResponse) {
+                    var re = $(\"post\", xmlResponse).map(function () {
+                    return {
+                        value: $(\"title\", this).text(),
+                                creator: $(\"creator\", this).text(),
+                                date: $(\"date\", this).text(),
+                                topic: $(\"id\", this).text()
+                            };
+                        }).get();
+            $(function () {
 
-    $hostname = "localhost";
-    $username = "db";
-    $password = "db";
-    $dbName = "forum";
-    mysql_connect($hostname, $username, $password) OR DIE("unable to connect to database ");
-    mysql_select_db($dbName) or die(mysql_error());
-    $topicstable = "topics";
-    $usrtable = "users";
-    $query = "SELECT * FROM $topicstable";
-    $result = mysql_query($query);
-    echo "<script>
-$(function() {
-
-    $(\"#name\").autocomplete({
-        source: [";
-
-    while ($topics = mysql_fetch_array($result)) {
-        $creator = $topics['creator'];
-        $usr = mysql_query("SELECT * FROM $usrtable WHERE id=$creator");
-        $usr = mysql_fetch_array($usr)['nick'];
-        $dt = $topics['creationdate'];
-        echo "\n{\n" . 'topic : "' . $topics['id'] . "\",\n" . ' value : "' . $topics['title'] . "\",\n" . 'creator : "' . $usr . '",' . "\n date: \"" . $dt . "\"\n},";
-    }
-    echo "\n]
-    }).data( \"ui-autocomplete\" )._renderItem = function( ul, item ) {
-        var inner_html = '<a href = \"viewtopic.php?topic='+  item.topic +'\" target=\"_blank\">' + '<b>'+item.value + '</b> (created by <b>' +item.creator + '</b> on <b>' +item.date+ ')</b></a>';
-        return $( \"<li></li>\" )
-            .data( \"item.autocomplete\", item )
-            .append(inner_html)
-            .appendTo( ul );
-    };
+                $(\"#name\").autocomplete({
+                minLength: 1,
+                                source: re
+                            }).data(\"ui-autocomplete\")._renderItem = function (ul, item) {
+                    var inner_html = '<a href = \"viewtopic.php?topic=' + item.topic + '\" target=\"_blank\">' + '<b>' + item.value + '</b> (created by <b>' + item.creator + '</b> on <b>' + item.date + ')</b></a>';
+                    return $(\"<li></li>\")
+                    .data(\"item.autocomplete\", item)
+                    .append(inner_html)
+                    .appendTo(ul);
+                };
+                        });
+        }
+                });
+            });
 });
-</script>";
+
+</script>\n";
+
 } else echo "
 <div class=\"post\">
     <div class=\"bgr\">
@@ -84,5 +87,10 @@ $(function() {
 
 include 'footer.php';
 ?>
+
+
+
+
+
 </body>
 </html>
