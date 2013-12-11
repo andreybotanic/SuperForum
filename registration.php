@@ -42,6 +42,14 @@ session_start();
             <input type="button" class="button bb" value="Регистрация" id="send">
         </form>
     </div>
+    <div class="side bn" id="inuse-nick" >
+        <div class="caption">
+            <div class="arrow bnarr">
+                ◀
+            </div>
+            <p>This username is already in use.</p>
+        </div>
+    </div>
     <div class="side bn" id="baloon-nick">
         <div class="caption">
             <div class="arrow bnarr">
@@ -50,6 +58,7 @@ session_start();
             <p>Ник не должен быть длиннее 25 символов.</p>
         </div>
     </div>
+
     <div class="side bp" id="baloon-pass">
         <div class="caption">
             <div class="arrow bparr">
@@ -61,6 +70,7 @@ session_start();
 </div>
 <script>
 	$(document).ready(function() {
+    nickok = false;
     $(this).validall();
     });
 </script>

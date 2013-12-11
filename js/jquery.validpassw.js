@@ -11,7 +11,7 @@
                 }
             else {
                 $("#repeat_password").css("background-image", "none");
-               res = false;
+                res = false;
             }
         }
 
@@ -36,7 +36,11 @@
             tst();
         }
 
+
+
+
         return res;
     };
-})(jQuery);
+})
+    (jQuery);
 

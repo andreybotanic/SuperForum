@@ -13,11 +13,15 @@
 .bn {
     visibility: hidden;
     margin-top: 23px;
+    position: absolute;
 }
 
 .bp {
     visibility: hidden;
     margin-top: 5px;
+    position: relative;
+    margin-top: 145px;
+    margin-left: 68.2%;
 }
 
 .bparr {

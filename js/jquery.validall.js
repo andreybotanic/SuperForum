@@ -1,18 +1,21 @@
 (function ($) {
     jQuery.fn.validall = function () {
+
         var chk = false;
         var make = function () {
-           chk = $("#email").validmail() & $("#password").validpassw() & $("#nick").validnick();
-            if (chk)
-            {
-                $("#send").attr("type","submit");
-                $("#send").attr("onclick","");
+            chk = $("#email").validmail() & $("#password").validpassw() & nickok;
+            if (chk) {
+                $("#send").attr("type", "submit");
+                $("#send").attr("onclick", "");
             }
-            else
-            {
-                $("#send").attr("type","button");
-                $("#send").attr("onclick","alert('please fill all the fields');");
+            else {
+                $("#send").attr("type", "button");
+                $("#send").attr("onclick", "alert('please fill all the fields');");
             }
+        };
+        var makenick = function () {
+            $("#nick").validnick();
+
         };
         make();
         $("#email")
@@ -38,10 +41,10 @@
             })
         $("#nick")
             .keyup(function () {
-                make();
-            })
+                makenick();
+         })
             .blur(function () {
-                make();
+                makenick();
             })
 
         return true;
