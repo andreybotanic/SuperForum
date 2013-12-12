@@ -14,6 +14,8 @@ session_start();
     <script language="javascript" type="text/javascript" src="js/jquery.validmail.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.validnick.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.validall.js"></script>
+	<script language="javascript" type="text/javascript" src="js/jquery.typing-0.2.0.min.js"></script>
+	
     <?php
     include 'menu.php';
     ?>

@@ -1,9 +1,11 @@
 <?php
+
 header("Content-type: text/xml");
 echo chr(60) . chr(63) . 'xml version="1.0" encoding="utf-8" ' . chr(63) . chr(62);
 ?>
 <list>
 <?php
+  
 $usrnm = isset($_GET['username']) ? urldecode($_GET['username']) : "";
 $hostname = "localhost";
 $username = "db";

@@ -13,10 +13,6 @@
                 $("#send").attr("onclick", "alert('please fill all the fields');");
             }
         };
-        var makenick = function () {
-            $("#nick").validnick();
-
-        };
         make();
         $("#email")
             .keyup(function () {
@@ -39,14 +35,20 @@
             .blur(function () {
                 make();
             })
-        $("#nick")
-            .keyup(function () {
-                makenick();
-         })
-            .blur(function () {
-                makenick();
-            })
 
+
+        $("#nick").typing({
+            start: function (event, $elem) {
+                nickok = false;
+                $("#send").attr("type", "button");
+                $("#send").attr("onclick", "alert('please fill all the fields');");
+                $("#nick").css("background-image", "url(images/loading.gif)");
+            },
+            stop: function (event, $elem) {
+                $("#nick").validnick();
+            },
+            delay: 700
+        });
         return true;
     };
 })(jQuery);

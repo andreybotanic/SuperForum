@@ -4,7 +4,6 @@ echo chr(60) . chr(63) . 'xml version="1.0" encoding="utf-8" ' . chr(63) . chr(6
 ?>
 <list>
     <?php
-    usleep(300000);
     $ttl =  isset($_GET['title']) ? urldecode($_GET['title']): "";
     $hostname = "localhost";
     $username = "db";
