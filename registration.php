@@ -49,7 +49,7 @@ session_start();
             <div class="arrow bnarr">
                 ◀
             </div>
-            <p>This username is already in use.</p>
+            <p>Этот ник уже занят.</p>
         </div>
     </div>
     <div class="side bn" id="baloon-nick">

@@ -21,13 +21,17 @@
             .blur(function () {
                 make();
             })
-        $("#password")
-            .keyup(function () {
+
+
+
+        $("#password").typing({
+            stop: function () {
                 make();
-            })
-            .blur(function () {
-                make();
-            })
+            },
+            delay: 400
+        });
+
+
         $("#repeat_password")
             .keyup(function () {
                 make();
