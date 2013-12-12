@@ -42,6 +42,7 @@
         else {
             $(this).css("background-image", "none");
             $("#baloon-nick").css("visibility", "hidden");
+            $("#inuse-nick").css("visibility", "hidden");
             res = false;
         }
         return res;
