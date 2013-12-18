@@ -45,6 +45,8 @@ $row = mysql_fetch_array($result);
 $total = $row[0];
 
 $totalpages = ceil($total / $numposts);
+
+
 if ($page > $totalpages) {
     $page = $totalpages;
     echo '<meta http-equiv="refresh" content="0;URL=/viewtopic.php?page=' . $page . '&topic=' . $topic . '">';
@@ -135,6 +137,12 @@ while ($row = mysql_fetch_array($posts)) {
 }
 
 
+echo
+'<div id = "lastmsg">
+
+
+</div>';
+
 echo "<nav><ul>";
 echo "<li><form  method=\"post\" name=\"formname\">
     <input  class = 'pagelink in' name=\"inputname\" type=\"text\" />
@@ -176,15 +184,18 @@ mysql_close();
 echo
 '<div id = "last">
 
+
 </div>';
 
 echo '<script>
     $(document).ready(function() {
-        $("#sendbtn").send(' . $topic . ');
+        $("#sendbtn").send(' . $topic . ',' . $page . ');
        });
 </script>';
 
 include 'footer.php';
 ?>
+
+
 </body>
 </html>
