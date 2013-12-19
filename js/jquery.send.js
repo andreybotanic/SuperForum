@@ -26,7 +26,7 @@
                             dataType: "text",
                         }))
                         .then(function (response) {
-                            if (response.contains('yes')) {
+                            if (response.indexOf('yes') != -1) {
 
 
                                 $.when($.ajax({
