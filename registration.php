@@ -8,48 +8,91 @@ session_start();
     <title>
         Регистрация
     </title>
-    <link rel="stylesheet" href="css/registration.css">
+    
     <script language="javascript" type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.validpassw.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.validmail.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.validnick.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.validall.js"></script>
 	<script language="javascript" type="text/javascript" src="js/jquery.typing-0.2.0.min.js"></script>
+	<link rel="stylesheet" href="bootstrap-3.0.0/dist/css/bootstrap.css">
+	<script language="javascript" type="text/javascript" src="bootstrap-3.0.0/dist/js/bootstrap.js"></script>
+	<link rel="stylesheet" href="css/registration.css">
+
+	
 	
     <?php
     include 'menu.php';
     ?>
 </head>
 <body>
-<div class="dives">
-    <div class="frame">
-        <p align="center">Все поля обязательны для заполнения</p>
-        <form action="register.php" method="post">
-            <div class="field">
-                <p class="label">Ник</p>
-                <input type="text" class="lab" id="nick" name="nick">
-            </div>
-            <div class="field">
-                <p class="label">E-mail</p>
-                <input type="text" class="lab" id="email" name="email">
-            </div>
-            <div class="field">
-                <p class="label">Пароль</p>
-                <input type="password" class="lab" id="password" name="password">
-            </div>
-            <div class="field">
-                <p class="label">Подтверждение пароля</p>
-                <input type="password" class="lab" id="repeat_password" name="repeat_password">
-            </div>
-            <input type="button" class="button bb" value="Регистрация" id="send">
-        </form>
-    </div>
-    <div class="side bn" id="inuse-nick" >
-        <div class="caption">
+
+       
+	   
+	   
+	  
+	   
+	   
+	   <form class="form-horizontal" action="register.php" method="post" >
+<fieldset>
+
+<!-- Form Name -->
+<legend>Регистрейшн, десу</legend>
+
+<!-- Text input-->
+<div class="form-group">
+   
+  <div class="col-md-7">
+  <input id="nick" name="nick" placeholder="Имя пользователя" class="form-control input-md lab" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  
+  <div class="col-md-7">
+  <input id="email" name="email" placeholder="E-mail" class="form-control input-md lab" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+ 
+  <div class="col-md-7">
+    <input id="password" name="password" placeholder="Пароль" class="form-control input-md lab" required="" type="password">
+    
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+ 
+  <div class="col-md-7">
+    <input id="repeat_password" name="repeat_password" placeholder="Подтверждение пароля" class="form-control input-md lab" required="" type="password">
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+ 
+  <div class="col-md-7">
+    <input type="button" id="send" name="send" class="btn btn-success" value="Отправить"></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+	  
+	   <div class="side bn" id="inuse-nick" >
+        <div class="caption ">
             <div class="arrow bnarr">
                 ◀
             </div>
-            <p>Этот ник уже занят.</p>
+            <p id="bnbl" >Этот ник уже занят.</p>
         </div>
     </div>
     <div class="side bn" id="baloon-nick">
@@ -57,19 +100,22 @@ session_start();
             <div class="arrow bnarr">
                 ◀
             </div>
-            <p>Ник не должен быть длиннее 25 символов.</p>
+            <p id = "bnbll">Ник не должен быть длиннее 25 символов.</p>
         </div>
     </div>
 
     <div class="side bp" id="baloon-pass">
-        <div class="caption">
+        <div class="caption bps">
             <div class="arrow bparr">
                 ◀
             </div>
-            <p>Пароль должен быть не короче 6 символов и содержать хотя бы одну букву и одну цифру.</p>
+            <p id = "bpc">Пароль должен быть не короче 6 символов и содержать хотя бы одну букву и одну цифру.</p>
         </div>
     </div>
-</div>
+	   
+	   
+	  
+        
 <script>
 	$(document).ready(function() {
     nickok = false;

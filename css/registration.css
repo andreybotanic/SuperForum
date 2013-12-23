@@ -1,45 +1,38 @@
 @import "common.css";
 
-.frame {
-    float: left;
-    width: 35%;
-    margin-left: 32.5%;
-}
-
 .side {
-    margin-left: 67.6%;
+    margin-left: 56%;
 }
 
 .bn {
     visibility: hidden;
-    margin-top: 23px;
     position: absolute;
+    margin-top: 68px;
+
 }
 
 .bp {
     visibility: hidden;
-    margin-top: 5px;
-    position: relative;
-    margin-top: 145px;
-    margin-left: 68.2%;
+    position: absolute;
+    margin-top: 150px;
+
+
 }
 
 .bparr {
-    margin-top: 38px;
+    margin-top: 27px;
 }
 
 .bnarr {
-    margin-top: 59px;
-}
-
-.dives {
-    padding-top: 1px;
+    margin-top: 11px;
 }
 
 .arrow {
     font-size: 20pt;
     color: #0af;
     margin-left: -18px;
+    width: 20px;
+    position: absolute;
 }
 
 .caption {
@@ -47,35 +40,50 @@
     margin-left: 15px;
     background-color: #0af;
     width: 200px;
-    height: 120px;
+    height: 57px;
     color: white;
     border-radius: 10px;
     font-family: sans-serif;
-    display: table;
+
 }
+
+.bps {
+
+    height: 96px;
+
+
+}
+
 
 .caption p {
-    padding: 5px;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
+
+    padding: 0 16px;
+    position: relative;
+    margin-top: -30px;
+    height: 42px;
+}
+#bnbl
+{
+    padding-top: 18px;
 }
 
-.label {
-    float: left;
-    padding-left: 25px;
+#bnbll
+{
+    padding-top: 7px;
 }
+
+#bpc
+{
+    padding-top: 7px;
+}
+
 
 .lab {
     padding: 5px 27px 3px 5px;
-    font-size: 14pt;
-    margin-right: 20px;
-    width: 180px;
-    float: right;
     background-size: 20px;
     background-repeat: no-repeat;
-    background-position: 189px 6px;
-    margin-top: 7px;
+    background-position: 194px 6px;
+
 }
 
 .passwsign {
@@ -85,3 +93,8 @@
     visibility: hidden;
 }
 
+.form-horizontal {
+    width: 400px;
+    margin-left: 530px;
+    float: left
+}

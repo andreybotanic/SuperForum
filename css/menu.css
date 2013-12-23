@@ -126,11 +126,15 @@ nav .nouser li {
     font-size:12px;
     margin-right: 10px;
     box-shadow: 0px 0px 7px #08f;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 }
 
 .toplinks ul.nouser li a:hover
 {
     padding: 10px 10px 0 10px;
+
 }
 
 .toplinks form {
@@ -154,6 +158,9 @@ nav .nouser li {
     border-bottom-right-radius:5px;
     height:26px;
     box-shadow: 0px 0px 7px #08f;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 }
 
 .toplinks .logindetails:hover
